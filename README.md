@@ -44,7 +44,7 @@ Before cloning this repository, on your new VM you should:
 8. **Test**
 	make ygainers.csv
 	tree SP25_DS5111_etk3pu -I env
-   If everything is set up correctly your tree should like this
+   If everything is set up correctly your tree should like this with ygainers.csv downloaded to the sample_data folder
 
 SP25_DS5111_etk3pu
 ├── README.md
@@ -56,3 +56,4 @@ SP25_DS5111_etk3pu
 │   └── ygainers.html
 └── scripts
     └── install_chrome.sh
+
