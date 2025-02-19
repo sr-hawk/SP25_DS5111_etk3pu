@@ -19,7 +19,7 @@ def test_normalize_csv_valid(tmp_path):
     )
     csv_file = tmp_path / "valid.csv"
     csv_file.write_text(csv_content, encoding="utf-8")
-    
+
     result = normalize_csv(str(csv_file))
     expected = [
         {
@@ -47,7 +47,7 @@ def test_normalize_csv_insufficient_columns(tmp_path):
     )
     csv_file = tmp_path / "insufficient.csv"
     csv_file.write_text(csv_content, encoding="utf-8")
-    
+
     with pytest.raises(AssertionError, match="Row has fewer than 4 columns"):
         normalize_csv(str(csv_file))
 
@@ -58,7 +58,7 @@ def test_normalize_csv_no_data(tmp_path):
     csv_content = "symbol,price,price_change,price_percent_change\n"
     csv_file = tmp_path / "no_data.csv"
     csv_file.write_text(csv_content, encoding="utf-8")
-    
+
     with pytest.raises(AssertionError, match="No data found after skipping header"):
         normalize_csv(str(csv_file))
 
@@ -90,7 +90,7 @@ def test_write_normalized_csv(tmp_path):
     ]
     output_file = tmp_path / "output.csv"
     write_normalized_csv(normalized_rows, str(output_file))
-    
+
     # Read the file manually and compare its contents.
     with open(output_file, 'r', encoding="utf-8") as f:
         content = f.read()
@@ -147,18 +147,18 @@ def test_main(monkeypatch, tmp_path, capsys):
     )
     csv_file = tmp_path / "test_main.csv"
     csv_file.write_text(csv_content, encoding="utf-8")
-    
+
     # Simulate command-line arguments: the first element is the script name.
     monkeypatch.setattr(sys, "argv", ["normalize_csv.py", str(csv_file)])
-    
+
     # Call main(). It should create an output file and print a message.
     main()
-    
+
     # Capture stdout.
     captured = capsys.readouterr().out.strip()
     expected_message = "Normalized CSV created: "
     assert captured.startswith(expected_message)
-    
+
     # Check that the output file exists.
     # The output filename is the input filename (without extension) + "_norm.csv"
     output_file = csv_file.with_name(csv_file.stem + "_norm.csv")
