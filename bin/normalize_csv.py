@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+'''
+Contains 2 functions, normalize_csv and write_normalized_csv.
+The required inputs are the path to an input csv and the output path for writing _csv
+Calling the file with these 2 inputs will run both functiions and created a norrmalized csv.
+'''
+
 
 import csv
 import sys
@@ -67,13 +73,18 @@ def write_normalized_csv(normalized_rows, output_path):
             writer.writerow(row)
 
 def main():
+    '''
+    Checks id the length of arguments is less thhan 2. If so print the proper usage and exit.
+    Applies normalize_csv to file in input path. Then writes a new file using the normalized data.
+    '''
     if len(sys.argv) < 2:
         print("Usage: python bin/normalize_csv.py <path_to_raw_csv>")
         sys.exit(1)
 
     input_path = sys.argv[1]
     normalized_data = normalize_csv(input_path)
-    output_path = f"{input_path}_norm.csv"
+    filename_without_ext = os.path.splitext(input_path)[0]
+    output_path = f"{filename_without_ext}_norm.csv"
 
     write_normalized_csv(normalized_data, output_path)
     print(f"Normalized CSV created: {output_path}")
