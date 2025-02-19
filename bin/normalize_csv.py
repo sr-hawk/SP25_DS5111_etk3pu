@@ -83,7 +83,7 @@ def main():
 
     input_path = sys.argv[1]
     normalized_data = normalize_csv(input_path)
-    filename_without_ext = os.path.splitext(input_path)
+    filename_without_ext = os.path.splitext(input_path)[0]
     output_path = f"{filename_without_ext}_norm.csv"
 
     write_normalized_csv(normalized_data, output_path)
