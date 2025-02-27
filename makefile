@@ -30,8 +30,8 @@ wjsgainers.csv: wjsgainers.html
 
 #Pylint normalize_csv.py
 lint: 
-	env/bin/python3 "pylint bin/normalize_csv.py"
+	env/bin/python3 -m pylint bin/normalize_csv.py
 
 #Pytest normalize_csv.py
 test:
-	env/bin/python3 "pytest tests/test_normalize_csv.py"
+	env/bin/python3 -m pytest tests/test_normalize_csv.py
