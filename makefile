@@ -22,8 +22,17 @@ ygainers.csv: ygainers.html
 
 # Download the HTML for WSJ gainers using headless Chrome.
 wjsgainers.html:
-	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=500 'https://www.wsj.com/market-data/stocks/us/movers' > wjsgainers.html
+	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.wsj.com/market-data/stocks/us/movers' > sample_data/wjsgainers.html
 
 # Convert the downloaded WSJ HTML to CSV.
 wjsgainers.csv: wjsgainers.html
 	env/bin/python3 -c "import pandas as pd; raw = pd.read_html('sample_data/wjsgainers.html'); raw[0].to_csv('sample_data/wjsgainers.csv', index=False)"
+
+#Pylint normalize_csv.py
+lint: 
+	env/bin/python3 -m pylint bin/normalize_csv.py
+
+#Pytest normalize_csv.py
+test:
+	env/bin/python3 -m pytest tests/test_environment.py
+	env/bin/python3 -m pytest tests/test_normalize_csv.py
