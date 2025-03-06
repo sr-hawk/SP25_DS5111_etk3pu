@@ -1,6 +1,7 @@
 import platform
 import sys
 import pytest
+# I don't think you need to import pytest if you're not using it's decorators... did I miss something?
 
 def test_os_is_linux():
     """Checks if the operating system is Linux."""
