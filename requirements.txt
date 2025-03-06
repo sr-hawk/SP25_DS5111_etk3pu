@@ -17,3 +17,4 @@ pytz
 six
 tomlkit
 tzdata 
+# would be good to add versions, at least for the top most important packages that are directly used
