@@ -34,5 +34,5 @@ lint:
 
 #Pytest normalize_csv.py
 test:
-	env/bin/python3 -m pytest tests/test_environment.py
+	env/bin/python3 -m pytest tests/test_environment.py # nice alternative to `. env/bin/activate;`
 	env/bin/python3 -m pytest tests/test_normalize_csv.py
