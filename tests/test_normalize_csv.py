@@ -4,7 +4,7 @@ sys.path.append('.')
 import pytest
 current_dir = os.path.dirname(os.path.abspath(__file__))
 bin_dir = os.path.abspath(os.path.join(current_dir, '..', 'bin'))
-sys.path.insert(0, bin_dir)
+sys.path.insert(0, bin_dir) # is this to avoid the linter hickuping on `bin`?  I believe that rule can be turned off
 from normalize_csv import normalize_csv, write_normalized_csv, main
 
 def test_normalize_csv_valid(tmp_path):
