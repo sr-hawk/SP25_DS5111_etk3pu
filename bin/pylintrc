@@ -1,3 +1,6 @@
+# the pylintrc would be better placed in the root of the repository, that would be
+# the conventional place to look for it.
+# just wondering, did you place it here because it wasn't working in the root folder?
 [MAIN]
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
