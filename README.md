@@ -75,7 +75,8 @@ This repository sets up a data collection pipeline using a headless Chrome brows
     This command displays the directory structure, excluding the `env` virtual environment. It confirms that files and directories are organized as expected, including the created ygainers.csv.
 
    If everything is set up correctly your tree should like this with ygainers.csv downloaded to the sample_data folder
-
+```
+# we're missing the triple ticks to make the tree readable
 SP25_DS5111_etk3pu
 ├── README.md
 ├── init.sh
@@ -86,6 +87,7 @@ SP25_DS5111_etk3pu
 │   └── ygainers.html
 └── scripts
     └── install_chrome.sh
+```
 **Lab 3**
 
 * **Create new branch:**
