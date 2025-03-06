@@ -205,3 +205,8 @@ SP25_DS5111_etk3pu
 * **Add Python 3.11 to GitHub Actions Workflow:**
     Modify your `validations.yml` file to include Python 3.11 in the test matrix.
 
+```
+wasn't sure how to add this, so I put the comment here... nice that you added a separate directory for
+sample_data, keep things organized and declutter the root directory. Makes it easier to get a sense
+of what is in the repo
+```
