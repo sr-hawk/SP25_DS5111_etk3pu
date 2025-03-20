@@ -36,3 +36,6 @@ lint:
 test:
 	env/bin/python3 -m pytest tests/test_environment.py
 	env/bin/python3 -m pytest tests/test_normalize_csv.py
+
+gainers:
+	. env/bin/activate; python get_gainer.py $(SRC)

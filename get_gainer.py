@@ -1,6 +1,5 @@
 import sys
 from bin.gainers.factory import GainerFactory
-from bin.gainers.base import ProcessGainer
 
 class ProcessGainer:
     def __init__(self, gainer_downloader, gainer_normalizer):

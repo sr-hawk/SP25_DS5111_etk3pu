@@ -1,6 +1,5 @@
 import platform
 import sys
-import pytest
 
 def test_os_is_linux():
     """Checks if the operating system is Linux."""
