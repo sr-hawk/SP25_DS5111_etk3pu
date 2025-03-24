@@ -20,3 +20,4 @@ def test_factory():
 
     with pytest.raises(AssertionError):
         factory.GainerFactory("invalid")
+        
