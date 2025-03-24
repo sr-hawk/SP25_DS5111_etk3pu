@@ -19,7 +19,6 @@ def test_get_gainer_main_no_modify():
         # Execute the code block directly using exec
         code_to_exec = """
 import sys
-from bin.gainers.factory import GainerFactory
 
 choice = sys.argv[1]
 
@@ -30,8 +29,12 @@ normalizer = factory.get_processor()
 runner = ProcessGainer(downloader, normalizer)
 runner.process()
 """
-        exec(code_to_exec, {"sys": get_gainer.sys, "GainerFactory": get_gainer.GainerFactory, "ProcessGainer": get_gainer.ProcessGainer})
+        exec(code_to_exec, {
+            "sys": get_gainer.sys,
+            "GainerFactory": mock_factory,  # Pass the mock here
+            "ProcessGainer": mock_process_gainer, # Pass the mock here
+        })
 
         mock_factory.assert_called_once_with("yahoo")
         mock_process_gainer.assert_called_once_with(mock_downloader, mock_processor)
-        mock_process_gainer_instance.process.assert_called_once()         
+        mock_process_gainer_instance.process.assert_called_once()
