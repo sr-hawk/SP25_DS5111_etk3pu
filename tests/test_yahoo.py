@@ -1,6 +1,5 @@
-import pytest
-from bin.gainers import yahoo
 from unittest.mock import MagicMock, patch
+from bin.gainers import yahoo
 
 def test_gainer_download_yahoo():
     downloader = yahoo.GainerDownloadYahoo()
@@ -21,3 +20,4 @@ def test_gainer_process_yahoo():
             processor.normalize()
             mock_read_html.assert_called_once()
             mock_to_csv.assert_called_once()
+            
