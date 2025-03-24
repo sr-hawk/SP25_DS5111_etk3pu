@@ -11,9 +11,7 @@ class GainerDownloadWSJ(GainerDownload):
     def download(self):
         print("Downloading WSJ gainers")
         os.makedirs(os.path.dirname(self.output_file), exist_ok=True) # Ensure directory exists
-        command = 
-        f"sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 '{self.url}' 
-        > {self.output_file}"
+        command = f"sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 '{self.url}' > {self.output_file}"
         subprocess.run(command, shell=True, check=True)
 
 class GainerProcessWSJ(GainerProcess):
