@@ -1,5 +1,6 @@
 from unittest.mock import MagicMock, patch
 from bin.gainers import wsj
+import pandas as pd
 
 def test_gainer_download_wsj():
     downloader = wsj.GainerDownloadWSJ()
