@@ -7,7 +7,7 @@ class GainerDownload(ABC):
     @abstractmethod
     def download(self):
         pass
-    
+
 class GainerProcess(ABC):
     def __init__(self):
         pass
@@ -19,3 +19,4 @@ class GainerProcess(ABC):
     @abstractmethod
     def save_with_timestamp(self):
         pass
+        
