@@ -1,4 +1,3 @@
-import pytest
 from unittest.mock import patch, Mock
 import get_gainer
 
@@ -30,3 +29,4 @@ def test_get_gainer_main_no_args():
         get_gainer.main()
         mock_print.assert_called_once_with("Usage: python get_gainer.py [yahoo|wsj]")
         mock_exit.assert_called_once_with(1)
+             
