@@ -29,8 +29,9 @@ wjsgainers.csv: wjsgainers.html
 	env/bin/python3 -c "import pandas as pd; raw = pd.read_html('sample_data/wjsgainers.html'); raw[0].to_csv('sample_data/wjsgainers.csv', index=False)"
 
 #Pylint normalize_csv.py
-lint: 
-	env/bin/python3 -m pylint bin/normalize_csv.py
+lint:
+	-env/bin/python3 -m pylint bin
+	-env/bin/python3 -m pylint tests
 
 #Pytest normalize_csv.py
 test:
