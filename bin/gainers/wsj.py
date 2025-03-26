@@ -12,7 +12,7 @@ from .base import GainerDownload, GainerProcess
 class GainerDownloadWSJ(GainerDownload):
     def __init__(self):
         self.url = 'https://www.wsj.com/market-data/stocks/us/movers'
-        self.output_file = 'timed_data/wjsgainers.html'
+        self.output_file = 'timed_data/wsjgainers.html'
 
     def download(self):
         print("Downloading WSJ gainers with Selenium")
@@ -38,8 +38,8 @@ class GainerDownloadWSJ(GainerDownload):
 
 class GainerProcessWSJ(GainerProcess):
     def __init__(self):
-        self.input_file = 'timed_data/wjsgainers.html'
-        self.output_file = 'timed_data/wjsgainers.csv'
+        self.input_file = 'timed_data/wsjgainers.html'
+        self.output_file = 'timed_data/wsjgainers.csv'
 
     def normalize(self):
         print("Normalizing WSJ gainers")
@@ -62,7 +62,7 @@ class GainerProcessWSJ(GainerProcess):
         df = self.normalize()
         if df is not None:
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            timestamped_output_file = f"timed_data/wjsgainers_{timestamp}.csv"
+            timestamped_output_file = f"timed_data/wsjgainers_{timestamp}.csv"
             df.to_csv(timestamped_output_file, index=False)
             print(f"Saved to {timestamped_output_file}")
         else:
