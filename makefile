@@ -20,16 +20,16 @@ ygainers.html:
 	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=15000 'https://finance.yahoo.com/markets/stocks/gainers/?start=0&count=200' > timed_data/ygainers.html
 
 # Convert the downloaded HTML to CSV using a Python one-liner.
-%.csv: ygainers.html
+ygainers.csv: ygainers.html
 	env/bin/python3 -c "import pandas as pd; raw = pd.read_html('timed_data/ygainers.html'); raw[0].to_csv('$@', index=False)"
 
 # Download the HTML for WSJ gainers using headless Chrome.
-wjsgainers.html:
-	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.wsj.com/market-data/stocks/us/movers' > timed_data/wjsgainers.html
+wsjgainers.html:
+	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.wsj.com/market-data/stocks/us/movers' > timed_data/wsjgainers.html
 
 # Convert the downloaded WSJ HTML to CSV.
-%.csv: wjsgainers.html
-	env/bin/python3 -c "import pandas as pd; raw = pd.read_html('timed_data/wjsgainers.html'); raw[0].to_csv('$@', index=False)"
+wsjgainers.csv: wsjgainers.html
+	env/bin/python3 -c "import pandas as pd; raw = pd.read_html('timed_data/wsjgainers.html'); raw[0].to_csv('$@', index=False)"
 
 #Pylint normalize_csv.py
 lint:

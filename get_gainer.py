@@ -23,7 +23,7 @@ class ProcessGainer:
 if __name__=="__main__":
     # Our sample main file would look like this
     import sys
-   
+
     # Make our selection, 'one' choice
     choice = sys.argv[1]
 

@@ -7,7 +7,7 @@ from .base import GainerDownload, GainerProcess
 class GainerDownloadYahoo(GainerDownload):
     def __init__(self):
         self.url = 'https://finance.yahoo.com/gainers'
-        self.output_file = 'sample_data/ygainers.html'
+        self.output_file = 'timed_data/ygainers.html'
 
     def download(self):
         print("Downloading yahoo gainers")
@@ -17,8 +17,8 @@ class GainerDownloadYahoo(GainerDownload):
 
 class GainerProcessYahoo(GainerProcess):
     def __init__(self):
-        self.input_file = 'sample_data/ygainers.html'
-        self.output_file = 'sample_data/ygainers.csv'
+        self.input_file = 'timed_data/ygainers.html'
+        self.output_file = 'timed_data/ygainers.csv'
 
     def normalize(self):
         print("Normalizing yahoo gainers")
@@ -43,7 +43,7 @@ class GainerProcessYahoo(GainerProcess):
         df = self.normalize()
         if df is not None:
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            timestamped_output_file = f"sample_data/ygainers_{timestamp}.csv"
+            timestamped_output_file = f"timed_data/ygainers_{timestamp}.csv"
             df.to_csv(timestamped_output_file, index=False)
             print(f"Saved to {timestamped_output_file}")
         else:
