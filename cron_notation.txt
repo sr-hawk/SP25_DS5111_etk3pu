@@ -1,0 +1,2 @@
+* 10-16 * * 1-5 cd SP25_DS5111_etk3pu && /usr/bin/make gainers SRC=yahoo
+* 10-16 * * 1-5 cd SP25_DS5111_etk3pu && /usr/bin/make gainers SRC=wsj
