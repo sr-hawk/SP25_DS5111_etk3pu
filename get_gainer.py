@@ -1,6 +1,5 @@
 import sys
 from bin.gainers.factory import GainerFactory
-from bin.gainers.base import ProcessGainer
 
 class ProcessGainer:
     def __init__(self, gainer_downloader, gainer_normalizer):
@@ -24,7 +23,6 @@ class ProcessGainer:
 if __name__=="__main__":
     # Our sample main file would look like this
     import sys
-   
     # Make our selection, 'one' choice
     choice = sys.argv[1]
 
