@@ -1,3 +1,4 @@
+```
 erDiagram
     RAW_YAHOO ||--|| WEEKLY_GAINERS : merges
     RAW_WSJ ||--|| WEEKLY_GAINERS : merges
@@ -20,7 +21,7 @@ erDiagram
     }
     WEEKLY_GAINERS ||--o{ COMPARATIVE_PRICE_HISTOGRAM : analyzes
     DAILY_GAINERS ||--o{ COMPARATIVE_PRICE_HISTOGRAM : analyzes
-
+```
 ## Comparing Performance of Gainers on Daily and Weekly Timescales
 
 ## This ERD shows how we take our automated stock gainers collection and turn it into a meaningful graphic. By showing the intermediate steps we better conceptualize the process ourselves and gain a new tool in explaining how data science works.
