@@ -1,4 +1,4 @@
-```
+```mermaid
 erDiagram
     RAW_YAHOO ||--|| WEEKLY_GAINERS : merges
     RAW_WSJ ||--|| WEEKLY_GAINERS : merges
